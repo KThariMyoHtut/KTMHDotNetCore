@@ -1,4 +1,4 @@
-﻿using System.Data;
+﻿/*using System.Data;
 using System.Data.SqlClient;
 Console.WriteLine("Hello, World!");
 SqlConnectionStringBuilder stringBuilder = new SqlConnectionStringBuilder();
@@ -20,9 +20,25 @@ Console.WriteLine("Connection close");
 foreach(DataRow dr in dt.Rows)
 {
     Console.WriteLine("Blog Id =>"+dr["BlogId"]);
-    Console.WriteLine("Blog Id =>" + dr["BlogId"]);
-    Console.WriteLine("Blog Id =>" + dr["BlogId"]);
-    Console.WriteLine("Blog Id =>" + dr["BlogId"]);
-    Console.WriteLine("Blog Id =>" + dr["BlogId"]);
+    Console.WriteLine("Blog Title =>" + dr["BlogTitle"]);
+    Console.WriteLine("Blog Author =>" + dr["BlogAuthor"]);
+    Console.WriteLine("Blog Content =>" + dr["BlogContent"]);
+    Console.WriteLine("______________________________________");
 }
-Console.ReadKey();
+Console.ReadKey();*/
+
+using KTMHDotNetCore.ConsoleApp;
+
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        AdoDotNetExanple adoDotNetExample = new AdoDotNetExanple();
+        //adoDotNetExample.Read();
+        //adoDotNetExample.Create("title", "author", "content");
+        //adoDotNetExample.Update(13, "title 1", "author 1", "content 1");
+        adoDotNetExample.Edit(13);
+        adoDotNetExample.Edit(1);
+        Console.ReadLine();
+    }
+}
