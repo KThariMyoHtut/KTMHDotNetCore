@@ -27,7 +27,7 @@ foreach(DataRow dr in dt.Rows)
 }
 Console.ReadKey();*/
 
-using KTMHDotNetCore.ConsoleApp;
+/*using KTMHDotNetCore.ConsoleApp;
 
 internal class Program
 {
@@ -41,4 +41,9 @@ internal class Program
         adoDotNetExample.Edit(1);
         Console.ReadLine();
     }
-}
+}*/
+using KTMHDotNetCore.ConsoleApp;
+
+DapperExample dapperExample = new DapperExample();
+dapperExample.Run();
+Console.ReadLine();
