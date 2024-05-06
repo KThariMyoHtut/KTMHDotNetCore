@@ -14,9 +14,10 @@ namespace KTMHDotNetCore.ConsoleApp
         public static SqlConnectionStringBuilder SqlConnectionStringBuilder = new SqlConnectionStringBuilder()
         {
             DataSource = ".",
-            InitialCatalog = "DotNetTrainingBAtch4",
+            InitialCatalog = "DotNetTrainingBatch4",
             UserID = "sa",
-            Password = "sasa@123"
+            Password = "sasa@123",
+            TrustServerCertificate = true,
         };
     }
 }

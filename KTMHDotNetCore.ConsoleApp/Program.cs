@@ -42,8 +42,13 @@ internal class Program
         Console.ReadLine();
     }
 }*/
-using KTMHDotNetCore.ConsoleApp;
+/*using KTMHDotNetCore.ConsoleApp;
 
 DapperExample dapperExample = new DapperExample();
-dapperExample.Run();
+dapperExample.Run();*/
+
+using KTMHDotNetCore.ConsoleApp;
+
+EFCoreExample eFCoreExample = new EFCoreExample();
+eFCoreExample.Run();
 Console.ReadLine();
