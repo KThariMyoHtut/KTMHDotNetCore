@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using KTMHDotNetCore.ConsoleApp.Dtos;
 
-namespace KTMHDotNetCore.ConsoleApp
+namespace KTMHDotNetCore.ConsoleApp.EFCoreExamples
 {
 
     internal class EFCoreExample
     {
         private readonly AppDbContext db = new AppDbContext();
+       
         public void Run()
         {
             /*Read();
@@ -69,10 +71,10 @@ namespace KTMHDotNetCore.ConsoleApp
                 return;
             }
             item.BlogTitle = title;
-            item.BlogAuthor= author;
+            item.BlogAuthor = author;
             item.BlogContent = content;
 
-            int result=db.SaveChanges();
+            int result = db.SaveChanges();
             string message = result > 0 ? "Updating Successful." : "Updating Failed.";
             Console.WriteLine(message);
         }
@@ -89,6 +91,6 @@ namespace KTMHDotNetCore.ConsoleApp
             string message = result > 0 ? "Deleting Successful." : "Deleting Failed.";
             Console.WriteLine(message);
         }
-        
+
     }
 }

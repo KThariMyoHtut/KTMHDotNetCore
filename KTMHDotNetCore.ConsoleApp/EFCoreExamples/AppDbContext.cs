@@ -1,11 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using KTMHDotNetCore.ConsoleApp.Dtos;
+using KTMHDotNetCore.ConsoleApp.Services;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KTMHDotNetCore.ConsoleApp
+namespace KTMHDotNetCore.ConsoleApp.EFCoreExamples
 {
     internal class AppDbContext : DbContext
     {
@@ -13,7 +15,7 @@ namespace KTMHDotNetCore.ConsoleApp
         {
             optionsBuilder.UseSqlServer(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
         }
-        public DbSet<BlogDto> Blogs{ get; set; }    
+        public DbSet<BlogDto> Blogs { get; set; }
 
     }
 }

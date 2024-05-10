@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Collections;
 using System.Reflection.Metadata;
 
-namespace KTMHDotNetCore.ConsoleApp
+namespace KTMHDotNetCore.ConsoleApp.AdoDotNetExamples
 {
     internal class AdoDotNetExanple
     {
@@ -19,11 +19,11 @@ namespace KTMHDotNetCore.ConsoleApp
             UserID = "sa",
             Password = "sasa@123"
         };
-        
+
         public void Read()
         {
             SqlConnection connection = new SqlConnection(sqlConnectionStringBuilder.ConnectionString);
-      
+
             connection.Open();
             Console.WriteLine("Connection Open");
 
@@ -58,7 +58,7 @@ namespace KTMHDotNetCore.ConsoleApp
             DataTable dt = new DataTable();
             sqlDataAdapter.Fill(dt);
             connection.Close();
-            if(dt.Rows.Count==0)
+            if (dt.Rows.Count == 0)
             {
                 Console.WriteLine("No Data Found");
                 return;
@@ -66,15 +66,15 @@ namespace KTMHDotNetCore.ConsoleApp
 
             DataRow dr = dt.Rows[0];
 
-                Console.WriteLine("Blog Id =>" + dr["BlogId"]);
-                Console.WriteLine("Blog Title =>" + dr["BlogTitle"]);
-                Console.WriteLine("Blog Author =>" + dr["BlogAuthor"]);
-                Console.WriteLine("Blog Content =>" + dr["BlogContent"]);
-                Console.WriteLine("______________________________________");
-            
+            Console.WriteLine("Blog Id =>" + dr["BlogId"]);
+            Console.WriteLine("Blog Title =>" + dr["BlogTitle"]);
+            Console.WriteLine("Blog Author =>" + dr["BlogAuthor"]);
+            Console.WriteLine("Blog Content =>" + dr["BlogContent"]);
+            Console.WriteLine("______________________________________");
+
         }
 
-        public  void Create(string title,string author,string content)
+        public void Create(string title, string author, string content)
         {
             SqlConnection connection = new SqlConnection(sqlConnectionStringBuilder.ConnectionString);
             connection.Open();
@@ -90,7 +90,7 @@ namespace KTMHDotNetCore.ConsoleApp
             cmd.Parameters.AddWithValue("@BlogTitle", title);
             cmd.Parameters.AddWithValue("@BlogAuthor", author);
             cmd.Parameters.AddWithValue("@BlogContent", content);
-            int result =cmd.ExecuteNonQuery();
+            int result = cmd.ExecuteNonQuery();
             connection.Close();
             string message = result > 0 ? "Saving Successful." : "Saving Failed.";
             Console.WriteLine(message);

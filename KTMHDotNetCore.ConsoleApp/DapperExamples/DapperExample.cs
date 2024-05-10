@@ -1,4 +1,6 @@
 ﻿using Dapper;
+using KTMHDotNetCore.ConsoleApp.Dtos;
+using KTMHDotNetCore.ConsoleApp.Services;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,7 +10,7 @@ using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KTMHDotNetCore.ConsoleApp
+namespace KTMHDotNetCore.ConsoleApp.DapperExamples
 {
     internal class DapperExample
     {
@@ -59,7 +61,7 @@ namespace KTMHDotNetCore.ConsoleApp
                 BlogAuthor = author,
                 BlogContent = content,
             };
-            string query=@"INSERT INTO [dbo].[Tbl_Blog]
+            string query = @"INSERT INTO [dbo].[Tbl_Blog]
            ([BlogTitle]
            ,[BlogAuthor]
            ,[BlogContent])
@@ -68,15 +70,15 @@ namespace KTMHDotNetCore.ConsoleApp
            ,@BlogAuthor
 		   ,@BlogContent)";
             using IDbConnection db = new SqlConnection(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
-            int result=db.Execute(query, item);
+            int result = db.Execute(query, item);
             string message = result > 0 ? "Saving Successful." : "Saving Failed.";
             Console.WriteLine(message);
         }
-        private void Update(int id,string title, string author, string content)
+        private void Update(int id, string title, string author, string content)
         {
             var item = new BlogDto
             {
-                BlogId = id,    
+                BlogId = id,
                 BlogTitle = title,
                 BlogAuthor = author,
                 BlogContent = content,
@@ -96,14 +98,14 @@ namespace KTMHDotNetCore.ConsoleApp
             var item = new BlogDto
             {
                 BlogId = id,
-      
+
             };
             string query = @"delete from Tbl_blog where BlogId =@BlogId";
             using IDbConnection db = new SqlConnection(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
             int result = db.Execute(query, item);
             string message = result > 0 ? "Deleting Successful." : "Deleting Failed.";
             Console.WriteLine(message);
-            
+
         }
     }
 }

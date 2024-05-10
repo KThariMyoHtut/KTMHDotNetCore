@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KTMHDotNetCore.ConsoleApp
+namespace KTMHDotNetCore.WebApi
 {
     internal static class ConnectionStrings
     {
