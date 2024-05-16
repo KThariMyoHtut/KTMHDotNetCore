@@ -37,6 +37,8 @@ namespace KTMHDotNetCore.ConsoleApp.DapperExamples
             }
         }
 
+
+
         private void Edit(int id)
         {
             using IDbConnection db = new SqlConnection(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
